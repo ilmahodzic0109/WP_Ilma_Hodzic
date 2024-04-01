@@ -1,0 +1,119 @@
+[
+    {
+        "id": 1,
+        "name": "Svilena abaya",
+        "topic":"O proizvodu",
+        "price": 240.00,
+        "description": "Naša nova kolekcija luksuznih svilenih abaya, ručno izrađenih od 100% prirodne svile, pruža vam bespjekornu udobnost i prozračnost koju zaslužujete. Svaka abaya je jedinstveno djelo umjetnosti, tkano s pažnjom i ljubavlju kako bi vam omogućilo da se osjećate elegantno i sigurno tokom cijele sezone.",
+        "image": "images/h.jpg",
+        "category": "women"
+    },
+    {
+        "id": 2,
+        "name": "Svilene dimije",
+        "topic":"O proizvodu",
+        "price": 320.00,
+        "description": "Naše svilene dimije su ručno rađene i napravljene od najkvalitetnijih materijala, oživljavajući bosansku baštinu na nov i elegantan način.",
+        "image": "images/dimije.jpg",
+        "category": "women"
+    },
+    {
+        "id": 3,
+        "name": "Komplet od pletenine",
+        "topic":"O proizvodu",
+        "price": 150.00,
+        "description": "Ovaj komplet izrađen je od vrhunske pletenine koja pruža toplinu i udobnost. Savršen je za jesenske i zimske dane.",
+        "image": "images/em.jpg",
+        "category": "women"
+    },
+    {
+        "id": 4,
+        "name": "Pareo suknja",
+        "topic":"O proizvodu",
+        "price": 100.00,
+        "description": "Otkrijte novu dimenziju svog stila s pareo suknjama. Njihov oblik se savršeno uklapa u sve, od elegantnih bluza do pulovera, omogućavajući vam da stvorite brojne kombinacije.",
+        "image": "images/pareosuknja.jpg",
+        "category": "women"
+    },
+    {
+        "id": 5,
+        "name": "Čipkana abaya",
+        "topic":"O proizvodu",
+        "price": 180.00,
+        "description": "Otkrijte beskrajne mogućnosti kombiniranja sa našom predivnom čipkanom abayom. Medinska svila pruža bespjekornu mekoću, a čipka dodaje sofisticiranost svakom odjevanju, bez obzira na priliku.",
+        "image": "images/abaya2.jpg",
+        "category": "women"
+    },
+    {
+        "id": 6,
+        "name": "Abaya",
+        "topic":"O proizvodu",
+        "price": 170.00,
+        "description": "Odišite ljepotom i dostojanstvom u ovoj izvanrednoj plavoj abayi sa zlatnom čipkom. Njena bogata plava boja odiše kraljevskom elegancijom, dok raskošna čipka od zlata dodaje dodir sofisticiranosti i sjaja.",
+        "image": "images/abaya5.jpg",
+        "category": "women"
+    },
+    {
+        "id": 7,
+        "name": "Abaya",
+        "topic":"O proizvodu",
+        "price": 180.00,
+        "description": "Osvježite svoj stil zelenom abayom kroja šišmiša. Sofisticirana zelena nijansa stvaraju elegantan i moderno prilagođen izgled.",
+        "image": "images/hh.jpg",
+        "category": "women"
+    },
+    {
+        "id": 8,
+        "name": "Pareo suknja",
+        "topic":"O proizvodu",
+        "price": 120.00,
+        "description": "Uskladite se s najnovijim trendovima s ovom prekrasnom zelenom pareo suknjom. Njena savremena boja omogućava vam da stvorite elegantne i raznovrsne kombinacije.",
+        "image": "images/s.jpg",
+        "category": "women"
+    },
+    {
+        "id": 9,
+        "name": "Saten abaya",
+        "topic":"O proizvodu",
+        "price": 180.00,
+        "description": "Ogrnite se elegancijom sa abayom od satena. Njen graciozni pad odolije trendovima i nudi sofisticiranu izjavu za svaku priliku.",
+        "image": "images/abaya1.jpg",
+        "category": "women"
+    },
+    {
+        "id": 10,
+        "name": "Šišmiš abaya",
+        "topic":"O proizvodu",
+        "price": 180.00,
+        "description": "Preoblikovat ćete koncept moderne elegancije u ovoj predivnoj šišmiš abayi od svile.",
+        "image": "images/abaya4.jpg",
+        "category": "women"
+    },
+    {
+        "id": 11,
+        "name": "Rahat abaya",
+        "topic":"O proizvodu",
+        "price": 160.00,
+        "description": "Iskusite se lagodnošću i stilom rahat crvene abaye od medinske svile. Njen univerzalni dizajn omogućava vam da je lako kombinirate s jednostavnom maramom za svakodnevne prilike ili elegantnom maramom za posebne događaje.",
+        "image": "images/abaya3.jpg",
+        "category": "women"
+    },
+    {
+        "id": 12,
+        "name": "Cvjetne svilene dimije",
+        "topic":"O proizvodu",
+        "price": 320.00,
+        "description": "Naše svilene dimije su ručno rađene i napravljene od najkvalitetnijih materijala, oživljavajući bosansku baštinu na nov i elegantan način.",
+        "image": "images/cvjetnedimije.jpg",
+        "category": "women"
+    },
+    {
+        "id": 13,
+        "name": "Crna suknja",
+        "topic":"O proizvodu",
+        "price": 70.00,
+        "description": "Crna suknja od pletenine u olovka dizajnu savršeno je oličenje klasične i sofisticirane odjeće. Njen glatki i elegantni materijal od visokokvalitetne merino vune nudi besprijekornu mekoću i toplinu",
+        "image": "images/crnasuknja.jpg",
+        "category": "women"
+    }
+]
