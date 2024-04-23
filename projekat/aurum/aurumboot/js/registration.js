@@ -47,7 +47,19 @@ $("#registrationForm").validate({
         setTimeout(function() {
             $(".success-message").hide();
         }, 5000);
+
+        
+$('#add-patient-modal button[type="cancel"]').trigger("click");
+
+$.post(Constants.API_BASE_URL + "add_user.php", data)
+.done(function(data){
+    Utils.unblock_ui("#add-patient-modal");
+    $("#add-patient-modal").modal("toggle");
+    
+
+})
     }
+    
 });
 
 blockUi=(element) => {
