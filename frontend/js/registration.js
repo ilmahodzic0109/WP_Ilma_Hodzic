@@ -51,7 +51,7 @@ $("#registrationForm").validate({
         
 $('#add-patient-modal button[type="cancel"]').trigger("click");
 
-$.post(Constants.API_BASE_URL + "add_user.php", data)
+$.post("/../WP_Ilma_Hodzic/backend/add_user", data)
 .done(function(data){
     Utils.unblock_ui("#add-patient-modal");
     $("#add-patient-modal").modal("toggle");
