@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "productId": 1,
         "name": "Svilena abaya",
         "topic":"O proizvodu",
         "price": 240.00,
@@ -9,7 +9,7 @@
         "category": "women"
     },
     {
-        "id": 2,
+        "productId": 2,
         "name": "Svilene dimije",
         "topic":"O proizvodu",
         "price": 320.00,
@@ -18,7 +18,7 @@
         "category": "women"
     },
     {
-        "id": 3,
+        "productId": 3,
         "name": "Komplet od pletenine",
         "topic":"O proizvodu",
         "price": 150.00,
@@ -27,7 +27,7 @@
         "category": "women"
     },
     {
-        "id": 4,
+        "productId": 4,
         "name": "Pareo suknja",
         "topic":"O proizvodu",
         "price": 100.00,
@@ -36,7 +36,7 @@
         "category": "women"
     },
     {
-        "id": 5,
+        "productId": 5,
         "name": "Čipkana abaya",
         "topic":"O proizvodu",
         "price": 180.00,
@@ -45,7 +45,7 @@
         "category": "women"
     },
     {
-        "id": 6,
+        "productId": 6,
         "name": "Abaya",
         "topic":"O proizvodu",
         "price": 170.00,
@@ -54,7 +54,7 @@
         "category": "women"
     },
     {
-        "id": 7,
+        "productId": 7,
         "name": "Abaya",
         "topic":"O proizvodu",
         "price": 180.00,
@@ -63,7 +63,7 @@
         "category": "women"
     },
     {
-        "id": 8,
+        "productId": 8,
         "name": "Pareo suknja",
         "topic":"O proizvodu",
         "price": 120.00,
@@ -72,7 +72,7 @@
         "category": "women"
     },
     {
-        "id": 9,
+        "productId": 9,
         "name": "Saten abaya",
         "topic":"O proizvodu",
         "price": 180.00,
@@ -81,7 +81,7 @@
         "category": "women"
     },
     {
-        "id": 10,
+        "productId": 10,
         "name": "Šišmiš abaya",
         "topic":"O proizvodu",
         "price": 180.00,
@@ -90,7 +90,7 @@
         "category": "women"
     },
     {
-        "id": 11,
+        "productId": 11,
         "name": "Rahat abaya",
         "topic":"O proizvodu",
         "price": 160.00,
@@ -99,7 +99,7 @@
         "category": "women"
     },
     {
-        "id": 12,
+        "productId": 12,
         "name": "Cvjetne svilene dimije",
         "topic":"O proizvodu",
         "price": 320.00,
@@ -108,7 +108,7 @@
         "category": "women"
     },
     {
-        "id": 13,
+        "productId": 13,
         "name": "Crna suknja",
         "topic":"O proizvodu",
         "price": 70.00,
