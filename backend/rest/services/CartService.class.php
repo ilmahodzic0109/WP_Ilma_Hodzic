@@ -9,11 +9,12 @@ class CartService {
         $this->cart_dao = new CartDao();
     }
 
-    public function add_to_cart($item) {
-        // Validate item data if needed
-        // For example: check if quantity is numeric and positive
-
-        // Call the add_to_cart method of the CartDao to add the item to the cart
-        return $this->cart_dao->add_to_cart($item);
+    public function get_cart_items($user_id) {
+        return $this->cart_dao->get_cart_items($user_id);
     }
+
+    public function add_to_cart($cartItem) {
+        return $this->cart_dao->add_to_cart($cartItem);
+    }
+    
 }

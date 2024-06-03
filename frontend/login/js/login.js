@@ -54,6 +54,7 @@ $("#loginForm").validate({
                 }, 5000);
                 $("#add-login-modal").modal("toggle"); 
                 Utils.set_to_localstorage("user", response);
+                window.location = "../index.html";
             })
             .fail(function(error) {
                 Utils.unblock_ui("#loginForm"); 

@@ -7,7 +7,7 @@ use Firebase\JWT\Key;
 
 Flight::set('auth_service', new AuthService());
 
-Flight::group('/auth', function() {
+
     
     /**
      * @OA\Post(
@@ -28,14 +28,14 @@ Flight::group('/auth', function() {
      *      )
      * )
      */
-    Flight::route('POST /login', function() {
+    Flight::route('POST /auth/login', function() {
         $payload = Flight::request()->data->getData();
 
         $user = Flight::get('auth_service')->get_user_by_email($payload['email']);
+    
 
-        if(!$user || !password_verify($payload['password'], $user['password']))
+    if(!$user || !password_verify($payload['password'], $user['password']))
             Flight::halt(500, "Invalid username or password");
-
         unset($user['password']);
         
         $jwt_payload = [
@@ -47,14 +47,14 @@ Flight::group('/auth', function() {
 
         $token = JWT::encode(
             $jwt_payload,
-            JWT_SECRET,
+            Config::JWT_SECRET(),
             'HS256'
         );
 
         Flight::json(
             array_merge($user, ['token' => $token])
         );
-    });
+});
 
     /**
      * @OA\Post(
@@ -70,13 +70,13 @@ Flight::group('/auth', function() {
      *      ),
      * )
      */
-    Flight::route('POST /logout', function() {
+    Flight::route('POST /auth/logout', function() {
         try {
             $token = Flight::request()->getHeader("Authentication");
             if(!$token)
                 Flight::halt(401, "Missing authentication header");
 
-            $decoded_token = JWT::decode($token, new Key(JWT_SECRET, 'HS256'));
+            $decoded_token = JWT::decode($token, new Key(Config::JWT_SECRET(), 'HS256'));
 
             Flight::json([
                 'jwt_decoded' => $decoded_token,
@@ -86,4 +86,7 @@ Flight::group('/auth', function() {
             Flight::halt(401, $e->getMessage());
         }
     });
-});
+
+
+?>
+

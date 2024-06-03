@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../services/UserService.class.php';
+
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 /**
@@ -19,9 +20,9 @@ require_once __DIR__ . '/../../vendor/autoload.php';
      *              @OA\Property(property="id", type="int", example="1", description="User ID"),
      *              @OA\Property(property="username", type="string", example="Some username", description="Users username"),
      *         
-     *              @OA\Property(property="email", type="string", example="example@example.com", description="Patient email address"),
+     *              @OA\Property(property="email", type="string", example="example@example.com", description="User email address"),
      *             
-     *              @OA\Property(property="password", type="string", example="some_secret_password", description="Patient password")
+     *              @OA\Property(property="password", type="string", example="some_secret_password", description="User password")
      *          )
      *      )
      * )
@@ -34,5 +35,7 @@ Flight::route('POST /add_user', function(){
 
     Flight::json(['message' => "You have successfully added the user", 'data' => $user]);
 });
+
+
 
 
