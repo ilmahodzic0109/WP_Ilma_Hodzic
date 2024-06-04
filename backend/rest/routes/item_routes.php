@@ -16,6 +16,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
      */
 
 Flight::route('GET /items', function(){
+    
     Flight::set('item_service', new ItemService());
     $items = Flight::get('item_service')->get_all_items();
 
