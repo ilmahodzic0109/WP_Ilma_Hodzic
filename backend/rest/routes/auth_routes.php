@@ -78,7 +78,7 @@ Flight::set('auth_service', new AuthService());
 
             $decoded_token = JWT::decode($token, new Key(JWT_SECRET, 'HS256'));
 
-            Flight::json([
+            Flight::json([1
                 'jwt_decoded' => $decoded_token,
                 'user' => $decoded_token->user
             ]);

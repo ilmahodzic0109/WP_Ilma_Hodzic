@@ -127,46 +127,4 @@ function fetchCartDataFromDB() {
     });
 }
 
-function renderItems(cartDataArray) {
-    const cartBody = document.querySelector(".table-condensed");
-    const cartTotal = document.querySelector(".cart-total");
 
-    cartBody.innerHTML = ''; // Clear existing items
-    let cartTotalPrice = 0;
-
-    cartDataArray.forEach(instance => {
-        fetchDataWithId(instance.product_id, "js/shop.json").then(productInfo => {
-            cartTotalPrice += (instance.quantity * productInfo.price);
-
-            let item = document.createElement("tbody");
-            item.classList.add("row");
-            item.innerHTML = `
-                <tr>
-                    <td data-th="Product">
-                        <div class="row">
-                            <div class="col-md-3 text-left">
-                                <img src="${productInfo.image}" alt="" class="img-fluid">
-                            </div>
-                            <div class="col-md-9 text-left mt-sm-2">
-                                <h4>${productInfo.name}</h4>
-                            </div>
-                        </div>
-                    </td>
-                    <td data-th="Price">${productInfo.price} KM</td>
-                    <td data-th="Quantity">
-                        <input type="number" class="form-control text-center" value="${instance.quantity}">
-                    </td>
-                    <td class="actions" data-th="">
-                        <div class="text-right">
-                            <button class="btn btn-white btn-md mb-2"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </td>
-                </tr>
-            `;
-
-            cartBody.append(item);
-        });
-    });
-
-    cartTotal.innerHTML = cartTotalPrice;
-}

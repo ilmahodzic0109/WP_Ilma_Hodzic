@@ -8,7 +8,10 @@ Flight::route('/*', function() {
         strpos(Flight::request()->url, '/auth/login') === 0 ||
         strpos(Flight::request()->url, '/items') === 0 ||
         strpos(Flight::request()->url, '/add_to_cart') === 0 ||
-        strpos(Flight::request()->url, '/auth/register') === 0
+        strpos(Flight::request()->url, '/get_cart_items') === 0 ||
+        strpos(Flight::request()->url, '/delete_cart_item') === 0 ||
+        strpos(Flight::request()->url, '/add_order') === 0 ||
+        strpos(Flight::request()->url, '/add_user') === 0
     ) {
         return TRUE;
     } else {
