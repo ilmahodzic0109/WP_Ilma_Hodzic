@@ -1,70 +1,80 @@
 $(document).ready(() => {
-    const cartTotal = document.querySelector(".checkout-total");
-    const cartBody = document.querySelector(".checkout-body");
+    var users = [];
+var idCounter = 1;
 
-    let cartData = [];
-    let itemCount = 0;
-    let cartTotalPrice = 0;
+// Define utility functions
+function blockUi(element) {
+    $(element).block({ message: '<div class="loading-spinner"></div>' });
+}
 
-    fetchCartData("js/cart.json");
+function unblockUi(element) {
+    $(element).unblock({});
+}
 
-    function fetchCartData(dataUrl) {
-        $.get(dataUrl, (data) => {
-            console.log("Data fetched: ", data);
+function serializeForm(form) {
+    let jsonResult = {};
+    $.each($(form).serializeArray(), function() {
+        jsonResult[this.name] = this.value;
+    });
+    return jsonResult;
+}
 
-            data.forEach(instance => {
-                cartData.push(instance);
-                itemCount++;
-            })
-            console.log("Data added to cartData: ", cartData);
-            renderItems(cartData);
-        });
-    } 
-
-    async function renderItems(cartDataArray) {
-        
-        for (const instance of cartDataArray) {
-            let item = document.createElement("div");
-
-            let productInfo = await fetchDataWithId(instance.productId, "js/shop.json");
-            console.log("Item info: ", productInfo);
-
-            cartTotalPrice += (instance.quantity * productInfo.price);
-            console.log("cartTotalPrice: ", cartTotalPrice);
-
-            item.classList.add("li");
-            item.innerHTML = `
-        
-            <div>
-                <h6 class="my-0">${productInfo.name}</h6>
-            </div>
-            <span class="text-muted">${productInfo.price} KM</span>
-       
-`;
-
-cartBody.append(item);
-
+    $("#checkoutForm").validate({
+        rules: {
+            firstName: { required: true },
+            lastName: { required: true },
+            email: { required: true, email: true },
+            country: { required: true },
+            address: { required: true },
+            city: { required: true },
+            zip: { required: true },
+            ccname: { required: true },
+            ccnumber: { required: true, minlength: 16, maxlength: 16 },
+            ccexpiration: { required: true },
+            cccvv: { required: true, minlength: 3, maxlength: 3 }
+        },
+        messages: {
+            firstName: { required: "Molimo vas unesite vaše ime" },
+            lastName: { required: "Molimo vas unesite vaše prezime" },
+            email: { required: "Molimo vas unesite validnu email adresu", email: "Molimo vas unesite validnu email adresu" },
+            country: { required: "Molimo vas unesite državu" },
+            address: { required: "Molimo vas unesite adresu" },
+            city: { required: "Molimo vas unesite grad" },
+            zip: { required: "Molimo vas unesite poštanski broj" },
+            ccname: { required: "Molimo vas unesite ime na kartici" },
+            ccnumber: { required: "Molimo vas unesite broj kartice", minlength: "Broj kartice mora imati 16 brojeva", maxlength: "Broj kartice mora imati 16 brojeva" },
+            ccexpiration: { required: "Molimo vas unesite datum isteka kartice" },
+            cccvv: { required: "Molimo vas unesite CVV", minlength: "CVV mora imati 3 brojeva", maxlength: "CVV mora imati 3 brojeva" }
+        },
+        submitHandler: function(form, event) {
+            event.preventDefault();
+            blockUi("#checkoutForm");
+    
+            let data = serializeForm(form);
+            data['id'] = idCounter;
+            idCounter += 1;
+            users.push(data);
+            $("#checkoutForm")[0].reset();
+            console.log(users);
+    
+            unblockUi("#checkoutForm");
+            $(".success-message").show();
+    
+            setTimeout(function() {
+                $(".success-message").hide();
+            }, 5000);
+    
+            $('#add-order-modal button[type="cancel"]').trigger("click");
+    
+            $.post("/../WP_Ilms_Hodzic/backend/add_order", data)
+                .done(function(response) {
+                    console.log(response);
+                    Utils.unblock_ui("#add-order-modal");
+                    $("#add-order-modal").modal("toggle");
+                })
+                .fail(function(xhr, status, error) {
+                    console.error(error);
+                });
         }
+    });});
 
-        console.log("Cart total price while adding: ", cartTotalPrice);
-        cartTotal.innerHTML = cartTotalPrice;
-    }
-
-    function fetchDataWithId(id, dataUrl) {
-        return new Promise((resolve, reject) => {
-            $.get(dataUrl, (data) => {
-                const foundInstance = data.find(instance => instance.id === id);
-                if (foundInstance) {
-                    console.log("instance: ", foundInstance);
-                    resolve(foundInstance);
-                } else {
-                    reject(new Error(`Instance with ID ${id} not found`));
-                }
-            }).done(() => {
-                console.log("DONE FETCHING DATA");
-            }).fail((error) => {
-                reject(new Error(`Failed to fetch data: ${error}`));
-            });
-        });
-    }
-});
